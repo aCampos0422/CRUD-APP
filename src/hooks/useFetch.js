@@ -4,13 +4,13 @@ import axios from "axios"
 
 
 // creamos la funcion (hook) pra hacer la peticion de la api
-const useFetch = (baseUrl) => {
+const useFetch = (baseUrl, setCloseForm) => {
   
   const [infoApi, setInfoApi] = useState()
 
   // GET
   const getApi = (path) => {
-    const url = `${baseUrl} ${path}/`
+    const url = `${baseUrl}${path}/`
     axios.get(url)
     .then(resp => setInfoApi(resp.data))
     .catch(error => console.error(error))
@@ -23,6 +23,7 @@ const useFetch = (baseUrl) => {
     .then(resp => {
       console.log(resp.data)
       setInfoApi([...infoApi, resp.data])
+      setCloseForm(true)
     })
     .catch(error => console.error(error))
   }
@@ -48,6 +49,7 @@ const useFetch = (baseUrl) => {
       console.log(resp.data)
       const mapInfoApi = infoApi.map(e => e.id === id ? resp.data : e)
       setInfoApi(mapInfoApi)
+      setCloseForm(true)
     })
     .catch(error => console.error(error))
   }
