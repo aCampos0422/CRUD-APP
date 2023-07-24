@@ -25,9 +25,12 @@ function App() {
   }
 
   return (
-    <>
-      <h1>HOLA MUNDO</h1>
-      <button className='formUser__btn' onClick={handleOpenForm}>Open Form</button>
+    < >
+      <h1>USUARIOS CRUD</h1>
+      <div className='formUser_btnContainer'>
+        <button className='formUser__btn' onClick={handleOpenForm}><i className='bx bxs-add-to-queue'></i>  Create New User</button>
+      </div>
+      
 
       <FormUser
         createNewUser={createNewUser}
@@ -37,7 +40,7 @@ function App() {
         closeForm={closeForm}
         setCloseForm={setCloseForm}
       />
-      <div>
+      <div className='userCard_globalContainer'>
         {
           users?.map(user => (
             <UserCard
@@ -50,6 +53,11 @@ function App() {
           ))
         } 
       </div>
+
+      <footer>
+        <h3>Todos los derechos reservados</h3>
+    
+      </footer>
       
     </>
   )

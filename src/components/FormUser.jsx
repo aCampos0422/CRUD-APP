@@ -36,9 +36,9 @@ const FormUser = ({createNewUser, updateInfo, updateUserById, setUpdateInfo, clo
 
   return (
     <div onClick={handleCloseForm} className={`formUser-global ${closeForm && 'formUser__closeForm'}`}>
-      <form onClick={e => e.stopPropagation} className='formUser' onSubmit={handleSubmit(submit)}>
+      <form onClick={e => e.stopPropagation()} className='formUser' onSubmit={handleSubmit(submit)}>
         <h2 className='formUser__title'>{updateInfo ? 'Update' : 'New User'}</h2>
-        <div onClick={handleCloseForm} className='formUser__close'>X</div>
+        <div onClick={handleCloseForm} className='formUser__close'><i className='bx bx-window-close'></i></div>
         <div className='formUser__container'>
           <label className='formUser__label' htmlFor="first_name">First Name</label>
           <input className='formUser__input' {...register('first_name')} type="text" id="first_name" />

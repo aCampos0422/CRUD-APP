@@ -1,4 +1,4 @@
-
+import "./styles/UserCard.css"
 
 const UserCard = ({user, deleteUserById, setUpdateInfo, handleOpenForm}) => {
 
@@ -13,23 +13,23 @@ const UserCard = ({user, deleteUserById, setUpdateInfo, handleOpenForm}) => {
 
   return (
     <article>
-      <h2>{user.first_name} {user.last_name}</h2>
-      <hr />
-      <ul>
-        <li>
-            <span>Birthday:</span>
-            <span>{user.birthday}</span>
-        </li>
-        <li>
-            <span>Email:</span>
-            <span>{user.email}</span>
-        </li>
-      </ul>
-      <footer>
-        <button onClick={handleDelete}><i className='bx bxs-trash'></i></button>
-        <button onClick={handleUpdate}><i className='bx bx-pencil'></i></button>
-      </footer>
-    
+      <div className="userCard-Container">
+        <h2 className="userCard_Name">{user.first_name} {user.last_name}</h2>
+        <ul className="userCard_info">
+          <li className="userCard_infoBirthday">
+              <span className="userCard_infoBirthday-icon"><i className='bx bx-gift'></i> Birthday</span>
+              <span>{user.birthday}</span>
+          </li>
+          <li className="userCard_infoEmail">
+              <span className="userCard_infoEmail-icon"><i className='bx bx-envelope'></i> Email</span>
+              <span>{user.email}</span>
+          </li>
+        </ul>
+        <footer className="userCard_btn">
+          <button className='userCard_btn-Erase' onClick={handleDelete}><i className='bx bxs-trash'></i></button>
+          <button className="userCard_btn-Write" onClick={handleUpdate}><i className='bx bx-pencil'></i></button>
+        </footer>
+      </div>
     </article>
   )
 }
