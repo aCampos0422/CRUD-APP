@@ -26,7 +26,7 @@ function App() {
 
   return (
     < >
-      <h1>USUARIOS CRUD</h1>
+      <h1 className='crud_title'>USUARIOS CRUD</h1>
       <div className='formUser_btnContainer'>
         <button className='formUser__btn' onClick={handleOpenForm}><i className='bx bxs-add-to-queue'></i>  Create New User</button>
       </div>
@@ -54,8 +54,8 @@ function App() {
         } 
       </div>
 
-      <footer>
-        <h3>Todos los derechos reservados</h3>
+      <footer className='footerCrud'>
+        <h3 className='footerCrud_title'>Todos los derechos reservados</h3>
     
       </footer>
       
